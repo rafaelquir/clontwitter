@@ -5,6 +5,8 @@ import { UserService } from '../../services/UserService';
 import { withRouter } from 'react-router';
 import UserCard from '../../components/UserCard';
 import Tweet from '../../components/Tweet';
+import {post, allpost} from '../../mocked_data';
+import NavBar from '../../components/NavBar';
 
 class Feed extends Component {
   constructor(props) {
@@ -64,8 +66,17 @@ class Feed extends Component {
 
     return (
       <div>
-        <UserCard {...user} />
-        {mappedTweets}
+        <NavBar></NavBar>
+        <div className="container">
+          <div className="columns">
+            <div className= "column is-one-third">
+              <UserCard {...user} />
+            </div>
+            <div>
+              <Tweet {...post}{...user}/> 
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

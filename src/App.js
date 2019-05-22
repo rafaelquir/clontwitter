@@ -32,7 +32,7 @@ class App extends Component {
                     userService={services.userService}
                 >
                     <Route exact path="/login" component={Login} />
-                    <ProtectedRoute exact path="/" component={Feed} />
+                    <Route exact path="/" component={Feed} />  {/* poner esto para que exija la clave despues ProtectedRoute */}
                     <Route exact path="/profile/:id" component={Profile} />
                 </LoggedInContextProvider>
                 </ServicesContextProvider>

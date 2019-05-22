@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router";
 import { UserService } from '../../services/UserService';
+import NavBar from '../../components/NavBar'
+import UserCard from '../../components/UserCard'
+import Tweet from '../../components/Tweet';
+import {post, allpost} from '../../mocked_data';
 
 class Profile extends Component {
   constructor(props) {
@@ -35,7 +39,17 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        ESTE ES EL PERFIL
+        <NavBar></NavBar>
+        <div className="container">
+          <div className="columns">
+            <div className= "column is-one-third">
+              <UserCard></UserCard>
+            </div>
+            <div>
+              <Tweet/> 
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
